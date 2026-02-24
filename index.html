@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Merch Store</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">
+        <img src="images/logo-merch.jpg.png" alt="Merch Store Logo">
+    </div>
+
+    <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#products">Productos</a></li>
+        <li><a href="#">Contacto</a></li>
+    </ul>
+
+    <div class="cart-icon" onclick="toggleCart()">
+        🛒 <span id="cartCount">0</span>
+    </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+    <div class="hero-content">
+        <h1>Estilo que Impone</h1>
+        <p>Ropa urbana • Selección Colombia • Tennis exclusivos</p>
+        <a href="#products" class="hero-btn">Explorar Colección</a>
+    </div>
+</header>
+
+<!-- CATALOGO -->
+<section id="products" class="products">
+</section>
+
+<!-- MODAL -->
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <h3 id="modalTitle"></h3>
+
+        <select id="sizeSelect">
+            <option value="">Selecciona talla</option>
+            <option value="S">S</option>
+            <option value="M">M</option>
+            <option value="L">L</option>
+            <option value="XL">XL</option>
+            <option value="38">38</option>
+            <option value="39">39</option>
+            <option value="40">40</option>
+            <option value="41">41</option>
+            <option value="42">42</option>
+        </select>
+
+        <button onclick="confirmAdd()" class="primary-btn">Agregar al carrito</button>
+        <button onclick="closeModal()" class="secondary-btn">Cancelar</button>
+    </div>
+</div>
+
+<!-- VISTA DE COMPRA (dinámica) -->
+<div id="purchaseView" class="purchase-overlay" aria-hidden="true">
+    <div class="purchase-card">
+        <button id="purchaseBackBtn" class="back-btn">← Volver</button>
+
+        <div class="purchase-body">
+            <img id="purchaseImage" src="" alt="Imagen del producto">
+
+            <div class="purchase-info">
+                <h2 id="purchaseName">Nombre del producto</h2>
+                <p class="purchase-price">$<span id="purchasePrice">0</span></p>
+
+                <label class="qty-label">Cantidad:
+                    <input id="purchaseQuantity" type="number" min="1" value="1">
+                </label>
+
+                <div class="purchase-actions">
+                    <button id="confirmPurchaseBtn" class="primary-btn">Confirmar compra</button>
+                </div>
+
+                <div id="purchaseMessage" class="purchase-message" role="status" aria-live="polite"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- CARRITO -->
+<div id="cart" class="cart">
+    <div class="cart-header">
+        <h2>Tu Pedido</h2>
+        <button onclick="toggleCart()">✕</button>
+    </div>
+
+    <div id="cartItems"></div>
+
+    <div class="cart-footer">
+        <h3>Total: $<span id="total">0</span></h3>
+        <button onclick="sendOrder()" class="primary-btn">Finalizar Pedido</button>
+    </div>
+</div>
+
+<!-- SCRIPT PRINCIPAL -->
+<script src="script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Confirmar Compra</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="compra-page">
+    <h1>Confirmar Compra</h1>
+
+    <div class="compra-card">
+      <img id="prodImagen" src="" alt="Imagen del producto">
+
+      <div class="compra-detalles">
+        <h2 id="prodNombre">Producto</h2>
+        <p>Precio: $<span id="prodPrecio">0</span></p>
+
+        <label>Cantidad:
+          <input id="prodCantidad" type="number" min="1" value="1">
+        </label>
+
+        <div class="compra-acciones">
+          <button id="confirmarCompra" class="primary-btn">Confirmar compra</button>
+          <button id="volverBtn" class="secondary-btn">Volver</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function(){
+      const imgEl = document.getElementById('prodImagen');
+      const nameEl = document.getElementById('prodNombre');
+      const priceEl = document.getElementById('prodPrecio');
+      const qtyEl = document.getElementById('prodCantidad');
+      const confirmBtn = document.getElementById('confirmarCompra');
+      const backBtn = document.getElementById('volverBtn');
+
+      const raw = localStorage.getItem('selectedProduct');
+      if(!raw){
+        // Si no hay producto, volvemos al inicio
+        alert('No se encontró ningún producto seleccionado.');
+        window.location.href = 'index.html';
+        return;
+      }
+
+      const product = JSON.parse(raw);
+
+      imgEl.src = product.image || '';
+      imgEl.alt = product.name || 'Producto';
+      nameEl.innerText = product.name || '';
+      priceEl.innerText = product.price || 0;
+
+      confirmBtn.addEventListener('click', function(){
+        alert('Compra realizada con éxito');
+        localStorage.clear();
+        window.location.href = 'index.html';
+      });
+
+      backBtn.addEventListener('click', function(){
+        history.back();
+      });
+    });
+  </script>
+
+</body>
+</html>
