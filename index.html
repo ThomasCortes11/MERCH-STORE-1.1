@@ -11,153 +11,139 @@
 
 <body>
 
-<!-- HEADER -->
 <header class="main-header">
     <div class="container nav-container">
         <div class="logo">MERCH STORE</div>
         <nav>
             <ul>
-                <li><a href="#inicio" class="nav-link">Inicio</a></li>
-                <li><a href="#mundial" class="nav-link">Edición Limitada</a></li>
-                <li><a href="#productos" class="nav-link">Colección</a></li>
-                <li><a href="#contacto" class="nav-link">Contacto</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#mundial">Edición Limitada</a></li>
+                <li><a href="#productos">Colección</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </div>
 </header>
 
-<!-- ICONO CARRITO -->
 <div class="cart-icon" onclick="toggleCart()">
     🛒 <span id="cartCount">0</span>
 </div>
 
-<!-- HERO -->
 <section class="hero" id="inicio">
     <div class="hero-content">
         <div class="limited-badge">EDICIÓN LIMITADA – TEMPORADA MUNDIAL 2026</div>
-        <h1>Apoya a Colombia en el Mundial 2026 🇨🇴</h1>
-        <p>
-            Vive la pasión del fútbol con nuestra colección premium.
-            Camisetas oficiales y unidades limitadas para verdaderos fanáticos.
-        </p>
+        <h1>Apoya a Colombia en el Mundial 2026</h1>
+        <p>No es solo fútbol. Es historia, orgullo y pasión. Descúbrelo en nuestra colección premium.</p>
         <a href="#productos" class="primary-btn">Ver colección</a>
     </div>
 </section>
 
-<!-- SECCIÓN EDICIÓN -->
 <section id="mundial" class="mundial-section">
     <div class="container mundial-container">
         <div class="mundial-text">
-            <h2>Edición Especial Mundial 2026 🇨🇴</h2>
-            <p>
-                Una colección diseñada para apoyar a Colombia en el Mundial 2026.
-                Diseños exclusivos, calidad premium y unidades limitadas.
-            </p>
+            <h2>Edición Especial Mundial 2026</h2>
+            <p>Colección Edición Especial Mundial 2026, creada para apoyar a la Selección Colombia con orgullo y pasión.</p>
         </div>
         <div class="mundial-image">
-            <img src="images/producto-4.jpg.JPG" alt="Edición Mundial 2026">
+            <img src="images/producto-46.jpg.JPG" alt="">
         </div>
     </div>
 </section>
 
 <!-- PRODUCTOS -->
 <section id="productos" class="products-section">
+
     <div class="container">
-        <h2 class="section-title">Colección Oficial</h2>
-        <div id="products" class="products-grid">
-            <!-- Se generan automáticamente con JS -->
+
+        <div class="category-header">
+            <span class="category-tag">Colección Oficial</span>
+            <h2>Selección Colombia</h2>
         </div>
+
+        <div id="seleccionContainer" class="products-grid"></div>
+
+        <div class="modern-divider">
+            <div class="divider-line"></div>
+            <span>CALZADO</span>
+            <div class="divider-line"></div>
+        </div>
+
+        <div id="calzadoContainer" class="products-grid"></div>
+
     </div>
 </section>
 
-<!-- BENEFICIOS -->
 <section class="benefits">
     <div class="container benefits-container">
         <div class="benefit">
             <h3>🔒 Pago Seguro</h3>
-            <p>Efectivo contra entrega en todo el país.</p>
+            <p>Efectivo contra entrega.</p>
         </div>
         <div class="benefit">
             <h3>🚚 Envíos Nacionales</h3>
-            <p>Entregas rápidas y confiables en Colombia.</p>
+            <p>Entregas rápidas en Colombia.</p>
         </div>
         <div class="benefit">
             <h3>⚡ Compra Fácil</h3>
-            <p>Selecciona tu talla, agrega al carrito y confirma en segundos.</p>
+            <p>Proceso simple y rápido.</p>
         </div>
     </div>
 </section>
 
-<!-- CARRITO LATERAL -->
 <div id="cartSidebar" class="cart-sidebar">
     <div class="cart-header">
         <h3>Tu carrito</h3>
         <span onclick="toggleCart()">✕</span>
     </div>
-
     <div id="cartItems" class="cart-items"></div>
-
-    <div class="cart-footer" style="padding:20px;">
+    <div class="cart-footer">
         <h4>Total: $<span id="cartTotal">0</span></h4>
         <button class="primary-btn" onclick="openCheckout()">Finalizar pedido</button>
     </div>
 </div>
 
-<!-- MODAL COMPRA -->
 <div id="purchaseModal" class="purchase-modal">
     <div class="purchase-card">
-        <span class="close-btn" onclick="closePurchase()" style="cursor:pointer; float:right;">×</span>
+        <span onclick="closePurchase()" class="close-btn">×</span>
         <h2>Finalizar pedido</h2>
-
-        <select id="paymentMethod">
-            <option value="Efectivo contra entrega">Efectivo contra entrega</option>
-        </select>
-
         <input type="text" id="customerName" placeholder="Nombre completo">
         <input type="text" id="customerCity" placeholder="Ciudad">
-        <input type="text" id="customerAddress" placeholder="Dirección completa">
-        <input type="text" id="customerPhone" placeholder="Número de WhatsApp">
-
+        <input type="text" id="customerAddress" placeholder="Dirección">
+        <input type="text" id="customerPhone" placeholder="WhatsApp">
         <button onclick="sendWhatsAppOrder()" class="primary-btn">
-            Confirmar pedido por WhatsApp
+            Confirmar pedido
         </button>
     </div>
 </div>
 
-<!-- TOAST -->
-<div id="toast" class="toast">✔ Producto agregado correctamente</div>
+<div id="toast" class="toast">✔ Producto agregado</div>
 
-<!-- FOOTER PROFESIONAL -->
+<!-- FOOTER ACTUALIZADO -->
 <footer id="contacto" class="footer">
-    <div class="footer-container">
+    <div class="container footer-container">
 
-        <div class="footer-column">
-            <h3>¿Quiénes somos?</h3>
+        <div class="footer-section">
+            <h3>Quiénes Somos</h3>
             <p>
-                Somos una tienda 100% digital especializada en la comercialización 
-                de productos edición Mundial 2026. Garantizamos calidad, 
-                seguridad y atención personalizada.
+                Somos una empresa digital dedicada a la comercialización de productos de alta calidad.
+                Garantizamos la mejor atención al cliente, ofreciendo confianza, responsabilidad
+                y una experiencia de compra segura y eficiente.
             </p>
         </div>
 
-        <div class="footer-column">
-            <h3>Contacto</h3>
-            <p><strong>Thomas Cortes</strong></p>
-            <p>Email: thomas310550@gmail.com</p>
-            <p>WhatsApp: 3227067516</p>
-        </div>
-
-        <div class="footer-column">
-            <h3>Información</h3>
-            <p>Envíos a todo Colombia</p>
-            <p>Pago contra entrega</p>
-            <p>Soporte personalizado</p>
+        <div class="footer-section">
+            <h3>Nuestro Contacto</h3>
+            <p><strong>Nombre:</strong> Thomas Cortes</p>
+            <p><strong>Teléfono:</strong> 322 706 7516</p>
+            <p><strong>Email:</strong> 
+                <a href="mailto:thomas310550@gmail.com">thomas310550@gmail.com</a>
+            </p>
         </div>
 
     </div>
 
     <div class="footer-bottom">
-        © 2026 Merch Store | Todos los derechos reservados
+        © 2026 Merch Store
     </div>
 </footer>
 
