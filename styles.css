@@ -887,3 +887,306 @@ body{
     }
 
 }
+/* ===============================
+   GRID PROFESIONAL DE PRODUCTOS
+=================================*/
+
+.products-grid {
+    display: grid;
+    gap: 20px;
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+    .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+}
+
+/* ===============================
+   SECCIÓN GENERAL
+=================================*/
+
+.products-section {
+    padding: 60px 0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* ===============================
+   BENEFICIOS RESPONSIVE
+=================================*/
+
+.benefits-container {
+    display: grid;
+    gap: 20px;
+}
+
+@media (min-width: 768px) {
+    .benefits-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    .benefits-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+}
+
+/* ===============================
+   CARRITO PROFESIONAL
+=================================*/
+
+.cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 400px;
+    max-width: 100%;
+    height: 100%;
+    background: #fff;
+    box-shadow: -4px 0 20px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+    z-index: 999;
+    display: flex;
+    flex-direction: column;
+}
+
+.cart-sidebar.active {
+    right: 0;
+}
+
+@media (max-width: 767px) {
+    .cart-sidebar {
+        width: 100%;
+    }
+}
+
+.cart-header,
+.cart-footer {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+/* ===============================
+   MODAL RESPONSIVE
+=================================*/
+
+.purchase-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.purchase-modal.active {
+    display: flex;
+}
+
+.purchase-card {
+    background: #fff;
+    padding: 30px;
+    width: 95%;
+    max-width: 400px;
+    border-radius: 12px;
+}
+
+.purchase-card input {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+/* ===============================
+   BOTONES PROFESIONALES
+=================================*/
+
+.primary-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background: #000;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.primary-btn:hover {
+    opacity: 0.85;
+}
+
+/* ===============================
+   TOAST AJUSTADO
+=================================*/
+
+.toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #000;
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1100;
+}
+
+.toast.show {
+    opacity: 1;
+}
+
+@media (max-width: 767px) {
+    .toast {
+        right: 50%;
+        transform: translateX(50%);
+    }
+}
+/* =========================================
+   QUIENES SOMOS & CONTACTO CENTRADO
+   (NO BORRA NADA)
+========================================= */
+
+.footer-section{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+
+.footer-section h3{
+    text-align:center;
+}
+
+.footer-section p{
+    text-align:center;
+    max-width:400px;
+}
+
+/* Línea decorativa centrada */
+.footer-section h3::after{
+    margin-left:auto;
+    margin-right:auto;
+}
+/* =========================================
+   MOBILE ESTILO MÁS PREMIUM
+========================================= */
+
+@media (max-width:768px){
+
+    /* Productos más tipo tienda elegante */
+    .products-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:12px;
+    }
+
+    .card{
+        padding:15px;
+        border-radius:15px;
+    }
+
+    .card img{
+        height:200px;
+    }
+
+    .card h3{
+        font-size:14px;
+    }
+
+    .card p{
+        font-size:14px;
+    }
+
+    /* Secciones más compactas */
+    .products-section{
+        padding:60px 0;
+    }
+
+    .benefits{
+        padding:60px 0;
+    }
+
+    /* Hero más limpio */
+    .hero{
+        padding:70px 20px;
+    }
+
+    .hero h1{
+        font-size:26px;
+    }
+
+}
+/* =========================================
+ QUIENES + CONTACTO
+   (NO BORRA NADA - SOLO AÑADE)
+========================================= */
+
+
+@media (max-width:768px){
+    /* =========================
+       QUIENES SOMOS CENTRADO
+    ========================= */
+
+    .footer-section{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        padding:0 20px;
+    }
+
+    .footer-section p{
+        max-width:500px;
+        margin-bottom:15px;
+    }
+
+    /* =========================
+       CONTACTO CENTRADO
+    ========================= */
+
+    .footer-container{
+        display:flex;
+        flex-direction:column;
+        align-items:center;
+        justify-content:center;
+        text-align:center;
+        gap:30px;
+        padding:0 20px;
+    }
+
+}
