@@ -4,17 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Merch Store | Edición Mundial 2026</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
+<!-- ── HEADER ── -->
 <header class="main-header">
     <div class="container nav-container">
         <div class="logo">MERCH STORE</div>
-        <nav>
+
+        <!-- Hamburger (solo móvil) -->
+        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+            <span></span><span></span><span></span>
+        </button>
+
+        <nav id="mainNav">
             <ul>
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#mundial">Edición Limitada</a></li>
@@ -25,34 +31,104 @@
     </div>
 </header>
 
+<!-- ── CARRITO FLOTANTE ── -->
 <div class="cart-icon" onclick="toggleCart()">
     🛒 <span id="cartCount">0</span>
 </div>
 
+<!-- ── HERO ── -->
 <section class="hero" id="inicio">
     <div class="hero-content">
-        <div class="limited-badge">EDICIÓN LIMITADA – TEMPORADA MUNDIAL 2026</div>
-        <h1>Apoya a Colombia en el Mundial 2026</h1>
-        <p>No es solo fútbol. Es historia, orgullo y pasión. Descúbrelo en nuestra colección premium.</p>
+        <div class="limited-badge">⚽ Edición Limitada — Mundial 2026</div>
+        <h1>Apoya a Colombia<br>en el Mundial 2026</h1>
+        <p>No es solo fútbol. Es historia, orgullo y pasión.<br>Descúbrelo en nuestra colección premium.</p>
         <a href="#productos" class="primary-btn">Ver colección</a>
     </div>
 </section>
 
+<!-- ── MUNDIAL ── -->
 <section id="mundial" class="mundial-section">
-    <div class="container mundial-container">
-        <div class="mundial-text">
-            <h2>Edición Especial Mundial 2026</h2>
-            <p>Colección Edición Especial Mundial 2026, creada para apoyar a la Selección Colombia con orgullo y pasión.</p>
-        </div>
-        <div class="mundial-image">
-            <img src="images/producto-46.jpg.JPG" alt="">
+
+    <!-- Franja de bandera Colombia -->
+    <div class="col-flag-bar">
+        <div class="flag-yellow"></div>
+        <div class="flag-blue"></div>
+        <div class="flag-red"></div>
+    </div>
+
+    <!-- Contador regresivo -->
+    <div class="countdown-bar">
+        <div class="container countdown-inner">
+            <span class="countdown-label">⚽ El Mundial arranca en</span>
+            <div class="countdown-clocks">
+                <div class="clock-unit"><span id="cd-days">--</span><small>días</small></div>
+                <div class="clock-sep">:</div>
+                <div class="clock-unit"><span id="cd-hours">--</span><small>horas</small></div>
+                <div class="clock-sep">:</div>
+                <div class="clock-unit"><span id="cd-mins">--</span><small>min</small></div>
+                <div class="clock-sep">:</div>
+                <div class="clock-unit"><span id="cd-secs">--</span><small>seg</small></div>
+            </div>
         </div>
     </div>
+
+    <!-- Contenido principal -->
+    <div class="mundial-body">
+        <div class="container mundial-container">
+
+            <!-- Texto -->
+            <div class="mundial-text">
+                <div class="mundial-eyebrow">🇨🇴 Colombia · FIFA World Cup 2026</div>
+                <h2 class="mundial-title">Colección<br><em>Edición Especial</em><br>Mundial 2026</h2>
+                <p class="mundial-desc">Diseñada para los que viven el fútbol con el alma. Cada pieza es un homenaje al regreso de la Selección Colombia al escenario más grande del mundo.</p>
+
+                <!-- Stats Colombia -->
+                <div class="col-stats">
+                    <div class="stat-item">
+                        <strong>6</strong>
+                        <span>Mundiales jugados</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>1994</strong>
+                        <span>Mejor actuación</span>
+                    </div>
+                    <div class="stat-item">
+                        <strong>2026</strong>
+                        <span>El regreso</span>
+                    </div>
+                </div>
+
+                <a href="#productos" class="mundial-btn">Ver colección completa →</a>
+            </div>
+
+            <!-- Imagen con badge -->
+            <div class="mundial-image-wrap">
+                <div class="mundial-badge-float">EDICIÓN<br>LIMITADA</div>
+                <img src="images/producto-46.jpg.JPG" alt="Producto Edición Mundial">
+                <div class="mundial-img-glow"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Franja inferior texto corrido -->
+    <div class="mundial-ticker">
+        <div class="ticker-track">
+            <span>COLOMBIA 🇨🇴</span><span>·</span>
+            <span>MUNDIAL 2026 ⚽</span><span>·</span>
+            <span>USA · CANADA · MÉXICO 🏆</span><span>·</span>
+            <span>EDICIÓN LIMITADA ⭐</span><span>·</span>
+            <span>COLOMBIA 🇨🇴</span><span>·</span>
+            <span>MUNDIAL 2026 ⚽</span><span>·</span>
+            <span>USA · CANADA · MÉXICO 🏆</span><span>·</span>
+            <span>EDICIÓN LIMITADA ⭐</span><span>·</span>
+        </div>
+    </div>
+
 </section>
 
-<!-- PRODUCTOS -->
+<!-- ── PRODUCTOS ── -->
 <section id="productos" class="products-section">
-
     <div class="container">
 
         <div class="category-header">
@@ -64,7 +140,7 @@
 
         <div class="modern-divider">
             <div class="divider-line"></div>
-            <span>CALZADO</span>
+            <span>⚽ CALZADO</span>
             <div class="divider-line"></div>
         </div>
 
@@ -73,81 +149,106 @@
     </div>
 </section>
 
+<!-- ── BENEFICIOS ── -->
 <section class="benefits">
     <div class="container benefits-container">
         <div class="benefit">
             <h3>🔒 Pago Seguro</h3>
-            <p>Efectivo contra entrega.</p>
+            <p>Efectivo contra entrega. Sin riesgos.</p>
         </div>
         <div class="benefit">
             <h3>🚚 Envíos Nacionales</h3>
-            <p>Entregas rápidas en Colombia.</p>
+            <p>Entregas rápidas a toda Colombia.</p>
         </div>
         <div class="benefit">
             <h3>⚡ Compra Fácil</h3>
-            <p>Proceso simple y rápido.</p>
+            <p>Proceso simple directo por WhatsApp.</p>
         </div>
     </div>
 </section>
 
+<!-- ── SIDEBAR CARRITO ── -->
 <div id="cartSidebar" class="cart-sidebar">
     <div class="cart-header">
-        <h3>Tu carrito</h3>
+        <span>🛒 Tu carrito</span>
         <span onclick="toggleCart()">✕</span>
     </div>
     <div id="cartItems" class="cart-items"></div>
     <div class="cart-footer">
         <h4>Total: $<span id="cartTotal">0</span></h4>
-        <button class="primary-btn" onclick="openCheckout()">Finalizar pedido</button>
+        <button class="primary-btn" onclick="openCheckout()">Finalizar pedido →</button>
     </div>
 </div>
 
+<!-- ── MODAL PEDIDO ── -->
 <div id="purchaseModal" class="purchase-modal">
     <div class="purchase-card">
         <span onclick="closePurchase()" class="close-btn">×</span>
         <h2>Finalizar pedido</h2>
         <input type="text" id="customerName" placeholder="Nombre completo">
         <input type="text" id="customerCity" placeholder="Ciudad">
-        <input type="text" id="customerAddress" placeholder="Dirección">
-        <input type="text" id="customerPhone" placeholder="WhatsApp">
+        <input type="text" id="customerAddress" placeholder="Dirección de entrega">
+        <input type="tel" id="customerPhone" placeholder="Tu WhatsApp">
         <button onclick="sendWhatsAppOrder()" class="primary-btn">
-            Confirmar pedido
+            ✅ Confirmar por WhatsApp
         </button>
     </div>
 </div>
 
-<div id="toast" class="toast">✔ Producto agregado</div>
+<!-- ── TOAST ── -->
+<div id="toast" class="toast">✔ Producto agregado al carrito</div>
 
-<!-- FOOTER ACTUALIZADO -->
+<!-- ── FOOTER ── -->
 <footer id="contacto" class="footer">
-    <div class="container footer-container">
 
-        <div class="footer-section">
-            <h3>Quiénes Somos</h3>
-            <p>
-                Somos una empresa digital dedicada a la comercialización de productos de alta calidad.
-                Garantizamos la mejor atención al cliente, ofreciendo confianza, responsabilidad
-                y una experiencia de compra segura y eficiente.
-            </p>
+    <!-- Nombre grande -->
+    <div class="footer-hero">
+        <div class="container">
+            <div class="footer-brand-name">MERCH STORE</div>
+            <div class="footer-brand-sub">Edición Limitada · Mundial 2026 · Colombia 🇨🇴</div>
         </div>
-
-        <div class="footer-section">
-            <h3>Nuestro Contacto</h3>
-            <p><strong>Nombre:</strong> Thomas Cortes</p>
-            <p><strong>Teléfono:</strong> 322 706 7516</p>
-            <p><strong>Email:</strong> 
-                <a href="mailto:thomas310550@gmail.com">thomas310550@gmail.com</a>
-            </p>
-        </div>
-
     </div>
 
-    <div class="footer-bottom">
-        © 2026 Merch Store
+    <!-- Info -->
+    <div class="container">
+        <div class="footer-container">
+
+            <div class="footer-section">
+                <h3>Quiénes Somos</h3>
+                <p>Somos una empresa digital dedicada a la comercialización de productos de alta calidad. Garantizamos la mejor atención al cliente, ofreciendo confianza, responsabilidad y una experiencia de compra segura y eficiente.</p>
+            </div>
+
+            <div class="footer-section">
+                <h3>Contáctanos</h3>
+                <div class="contact-pills">
+                    <a class="contact-pill" href="tel:3227067516">
+                        <span class="pill-icon">📞</span>
+                        322 706 7516
+                    </a>
+                    <a class="contact-pill" href="mailto:thomas310550@gmail.com">
+                        <span class="pill-icon">✉️</span>
+                        thomas310550@gmail.com
+                    </a>
+                    <a class="contact-pill" href="https://wa.me/573227067516" target="_blank">
+                        <span class="pill-icon">💬</span>
+                        Escríbenos por WhatsApp
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <span class="footer-bottom-left">© 2026 Merch Store. Todos los derechos reservados.</span>
+            <span class="footer-bottom-right">
+                <span class="live-dot"></span>
+                Tienda activa · Colombia
+            </span>
+        </div>
     </div>
+
 </footer>
 
 <script src="script.js"></script>
-
 </body>
 </html>
